@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@atlaskit/pragmatic-drag-and-drop": "^1.7.7",
