@@ -72,7 +72,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <main className="container mx-auto flex min-h-screen items-center justify-center p-4">
+    <main className="container mx-auto mt-14 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Sign Up</CardTitle>
