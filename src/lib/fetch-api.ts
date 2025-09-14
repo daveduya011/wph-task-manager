@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 
 export async function fetchApi(input: RequestInfo, init?: RequestInit) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
 
   return fetch(input, {
     ...init,
