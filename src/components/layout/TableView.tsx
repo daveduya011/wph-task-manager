@@ -17,7 +17,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Task, TaskStatus } from '@/types/task'
 import { TASK_STATUSES } from '@/types/task'
-import { Edit, Trash2 } from 'lucide-react'
+import { Edit, Eye, Trash2 } from 'lucide-react'
 
 interface TableViewProps {
   tasks: Task[]
@@ -38,7 +38,7 @@ export default function TableView({
         const filteredTasks = tasks.filter((task) => task.status === status)
         return (
           <div key={status} className="mb-8">
-            <h3 className="mb-4 text-xl font-bold">{status} Tasks</h3>
+            <h3 className="mb-4 text-xl font-bold">{status}</h3>
             <Table>
               <TableHeader>
                 <TableRow>
@@ -104,6 +104,14 @@ export default function TableView({
                       </TableCell>
                       <TableCell>
                         <div className="flex gap-1 sm:gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => router.push(`/task/${task.id}`)}
+                            title="View Task"
+                          >
+                            <Eye className="h-3 w-3 sm:h-4 sm:w-4" />
+                          </Button>
                           <Button
                             variant="outline"
                             size="sm"

@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-background border-border border-b p-4">
+    <nav className="bg-background border-border z-50 border-b p-4">
       <div className="container mx-auto flex items-center justify-between">
         <Link
           href="/"
@@ -34,7 +34,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-primary md:hidden"
+              className="text-muted-foreground hover:text-primary z-50 md:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
               title="Toggle Menu"
             >
@@ -45,7 +45,7 @@ const Navbar = () => {
               )}
             </Button>
             <div
-              className={`items-center space-x-4 md:flex ${menuOpen ? 'bg-background border-border absolute top-full right-0 left-0 flex flex-col space-y-2 border-b p-4' : 'hidden'}`}
+              className={`items-center space-x-4 md:flex ${menuOpen ? 'bg-background border-border absolute inset-0 z-40 flex flex-col items-stretch justify-center space-y-2 border-b p-4' : 'hidden'}`}
             >
               <Button asChild variant="ghost">
                 <Link href="/" title="Home" onClick={() => setMenuOpen(false)}>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   onClick={() => setMenuOpen(false)}
                 >
                   <Plus className="h-4 w-4" />
-                  Create
+                  Create Task
                 </Link>
               </Button>
 

@@ -101,36 +101,46 @@ export default function Home() {
 
   return (
     <main className="container mx-auto p-4">
-      <div className="mb-4 flex flex-col justify-end gap-2 sm:flex-row">
-        <Button
-          variant={layout === 'kanban' ? 'default' : 'outline'}
-          onClick={() => {
-            setLayout('kanban')
-            startTransition(async () => {
-              await setLayoutPreference('kanban')
-            })
-          }}
-          title="Kanban View"
-          disabled={isPending}
-        >
-          <Columns className="h-4 w-4" />
-          <span className="xs:inline hidden">Kanban</span>
-        </Button>
-        <Button
-          variant={layout === 'table' ? 'default' : 'outline'}
-          onClick={() => {
-            setLayout('table')
-            startTransition(async () => {
-              await setLayoutPreference('table')
-            })
-          }}
-          title="Table View"
-          disabled={isPending}
-        >
-          <TableIcon className="h-4 w-4" />
-          <span className="xs:inline hidden">Table</span>
-        </Button>
-      </div>
+      <Button
+        onClick={() => router.push('/task')}
+        className="fixed right-4 bottom-4 z-30 h-14 w-14 rounded-full shadow-lg md:hidden"
+        size="lg"
+        aria-label="Create new task"
+      >
+        <Plus className="h-6 w-6" />
+      </Button>
+      {tasks.length > 0 && (
+        <div className="mb-4 flex justify-end gap-2">
+          <Button
+            variant={layout === 'kanban' ? 'default' : 'outline'}
+            onClick={() => {
+              setLayout('kanban')
+              startTransition(async () => {
+                await setLayoutPreference('kanban')
+              })
+            }}
+            title="Kanban View"
+            disabled={isPending}
+          >
+            <Columns className="h-4 w-4" />
+            <span className="xs:inline hidden">Kanban</span>
+          </Button>
+          <Button
+            variant={layout === 'table' ? 'default' : 'outline'}
+            onClick={() => {
+              setLayout('table')
+              startTransition(async () => {
+                await setLayoutPreference('table')
+              })
+            }}
+            title="Table View"
+            disabled={isPending}
+          >
+            <TableIcon className="h-4 w-4" />
+            <span className="xs:inline hidden">Table</span>
+          </Button>
+        </div>
+      )}
       {isLoading ? (
         <div className="px-4 py-8 text-center sm:py-12">
           <div className="text-gray-500">Loading tasks...</div>
