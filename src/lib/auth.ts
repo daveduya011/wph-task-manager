@@ -1,6 +1,6 @@
 import { betterAuth } from 'better-auth'
 import { nextCookies } from 'better-auth/next-js'
-import { prismaAdapter, PrismaConfig } from "better-auth/adapters/prisma";
+import { prismaAdapter } from "better-auth/adapters/prisma";
 import { PrismaClient } from '@/generated/prisma';
 
 const prisma = new PrismaClient();
