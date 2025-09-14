@@ -13,7 +13,7 @@ A full-stack task management application built with Next.js, allowing users to e
 - **Status Tracking**: To Do, In Progress, and Completed statuses
 - **Due Dates**: Set and track task deadlines
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Persistent Storage**: Data stored securely in SQLite database
+- **Persistent Storage**: Data stored securely in PostgreSQL database
 ---
 
 ## Tech Stack
@@ -26,7 +26,7 @@ A full-stack task management application built with Next.js, allowing users to e
 ### Backend
 - **Next.js API Routes** - Server-side API endpoints
 - **Prisma** - Database ORM
-- **SQLite** - Database
+- **PostgreSQL** - Database
 - **Better Auth** - Authentication library
 
 ### Development Tools
