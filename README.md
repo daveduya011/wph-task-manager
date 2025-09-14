@@ -67,7 +67,7 @@ A full-stack task management application built with Next.js, allowing users to e
 
    Create a `.env.local` file in the root directory:
    ```env
-   DATABASE_URL="file:./dev.db"
+   PRISMA_DATABASE_URL="your-prisma-db-url"
    BETTER_AUTH_SECRET="your-secret-key-here"
    BETTER_AUTH_URL="http://localhost:3000"
    NEXT_PUBLIC_APP_URL="http://localhost:3000"
@@ -201,7 +201,7 @@ npm start
 ### Environment Variables for Production
 
 ```env
-DATABASE_URL="your-production-database-url"
+PRISMA_DATABASE_URL="your-production-database-url"
 BETTER_AUTH_SECRET="your-production-secret"
 BETTER_AUTH_URL="https://your-domain.com"
 NEXT_PUBLIC_APP_URL="https://your-domain.com"
